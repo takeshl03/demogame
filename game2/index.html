@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+<body background="/images/IZUKU EL DIOS DE LA ARENA.jpg">
+    <div id="example-1" class="container">
+        <div id="player" v-bind:class="{burst:ended}">
+            <img src="/images/player.jpg" alt="">
+            <p>Player</p>
+        </div>
+        <div id="playerHealth">
+            <div v-bind:style="{width: health + '%'}"></div>
+        </div>
+        <div id="monter" v-bind:class="{burst:ended}">
+            <img src="/images/monter.jpg" alt="">
+            <p>Monster</p>
+        </div>
+        <div id="monterHealth">
+            <div v-bind:style="{width: health + '%'}"></div>
+        </div>
+        <div id="controls">
+            <button v-on:click="start" v-show="!ended">Start</button>
+            <button v-on:click="atk">Attack</button>
+            <button v-on:clik="satk">Special-Attack</button>
+
+        </div>
+
+
+
+</body>
+
+</html>
+<script>
+    var example1 = new Vue({
+        el: '#example-1',
+        data: {
+            health: 100,
+            ended: false,
+            randomDamage: ""
+        },
+        methods: {          
+            /*randomDamage: function (min, max) { 
+                return Math.max(Math.floor(Math.random() * max) + 1, min);
+                if (this.health <= 0) {
+                    this.ended = true;}
+            },
+
+            start: function () {
+                this.health = 100;
+                this.ended = false;
+            },
+            satk: function () {
+                var hitChance = Math.round(Math.random() * 10);
+                if (hitChance <= 7) {
+                }
+                if (this.health <= 0) {
+                    this.ended = true;
+                }
+            },*/
+            atk: function(){
+                this.health -= 3;
+                if(this.health<=0){
+                    this.ended=true;
+                }
+            },
+            start: function(){
+                this.health = 100;
+                this.ended=false;
+
+            },
+            satk: function(){
+                this.health -= 10;
+                if(this.health<=0){
+                    this.ended=true;
+                }
+            }
+
+        },
+
+    })
+</script>

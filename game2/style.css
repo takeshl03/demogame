@@ -1,0 +1,36 @@
+img{
+    width: 100px;
+    height: 100px;
+    align-items: center;
+}
+#playerHealth{
+    width: 200px;
+    border: 2px solid #000;
+    
+}
+#playerHealth div{
+    height: 10px;
+    background: crimson;
+    
+}
+
+#monterHealth{
+    width: 200px;
+    border: 2px solid #000;
+    
+}
+#monterHealth div{
+    height: 10px;
+    background: crimson;
+}
+#controls{
+    width: 220px;
+    
+    margin-top: 20px;
+}
+p{
+    font-size: 40px;
+    color: white;
+    height: 40px;
+    border: black;
+}
